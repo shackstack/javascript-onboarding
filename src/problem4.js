@@ -9,6 +9,7 @@ function problem4(word) {
       return String.fromCharCode(122 - element.charCodeAt() + 97);
     } else return element;
   });
+  answer = answer.join("");
 
   return answer;
 }
