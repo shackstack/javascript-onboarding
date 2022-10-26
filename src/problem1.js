@@ -11,7 +11,16 @@ function problem1(pobi, crong) {
     return sumResult >= mulResult ? sumResult : mulResult;
   };
 
-  if (pobi[1] == pobi[0] + 1 && crong[1] == crong[0] + 1) {
+  if (
+    pobi[0] != 1 &&
+    pobi[1] != 400 &&
+    crong[0] != 1 &&
+    crong[1] != 400 &&
+    pobi.length === 2 &&
+    crong.length === 2 &&
+    pobi[1] == pobi[0] + 1 &&
+    crong[1] == crong[0] + 1
+  ) {
     let pobiPoint =
       compare(pobi[0]) >= compare(pobi[1])
         ? compare(pobi[0])
