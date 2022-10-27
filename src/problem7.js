@@ -1,21 +1,20 @@
 function problem7(user, friends, visitors) {
-  let userData = {};
+  let usersData = {};
   friends.forEach((item) => {
-    if (!userData[item[0]]) {
-      userData[item[0]] = [];
+    if (!usersData[item[0]]) {
+      usersData[item[0]] = [];
     }
-    userData[item[0]].push(item[1]);
-  });
-  friends.forEach((item) => {
-    if (!userData[item[1]]) {
-      userData[item[1]] = [];
+    usersData[item[0]].push(item[1]);
+
+    if (!usersData[item[1]]) {
+      usersData[item[1]] = [];
     }
-    userData[item[1]].push(item[0]);
+    usersData[item[1]].push(item[0]);
   });
 
   let friendOfFriend = [];
-  userData[user].forEach((friend) => {
-    userData[friend].forEach((friendsFriend) => {
+  usersData[user].forEach((friend) => {
+    usersData[friend].forEach((friendsFriend) => {
       if (friendsFriend != user) {
         friendOfFriend.push(friendsFriend);
       }
@@ -30,7 +29,7 @@ function problem7(user, friends, visitors) {
     pointInfo[person] += 10;
   });
   visitors.forEach((person) => {
-    if (!userData[user].includes(person)) {
+    if (!usersData[user].includes(person)) {
       if (!pointInfo[person]) {
         pointInfo[person] = 0;
       }
@@ -45,7 +44,11 @@ function problem7(user, friends, visitors) {
   });
 
   let answer = [];
-  arr.forEach((item) => answer.push(item[0]));
+  arr.forEach((item, index) => {
+    if (index < 5) {
+      answer.push(item[0]);
+    }
+  });
 
   return answer;
 }
