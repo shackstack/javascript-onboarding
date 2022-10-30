@@ -11,7 +11,7 @@ function problem3(number) {
     return count;
   };
 
-  for (let i = 0; i <= number; i++) {
+  for (let i = 1; i <= number; i++) {
     answer += clapCount(i);
   }
 
