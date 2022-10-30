@@ -2,8 +2,6 @@ function problem6(forms) {
   let answer = [];
   let wordList = [];
   let splitForms = [];
-  let dupicatedWordList = [];
-
   forms.forEach((item) => {
     let arr = [];
     let splitWord = item[1].split("");
@@ -14,6 +12,7 @@ function problem6(forms) {
     splitForms.push(arr);
   });
 
+  let dupicatedWordList = [];
   dupicatedWordList = wordList.filter((item, index) => {
     return wordList.indexOf(item) !== index;
   });
